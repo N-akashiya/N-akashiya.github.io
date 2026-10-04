@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff2b;
+  background: #0532ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2621,4 +2621,40 @@ body {
 .sidebar-categories .sidebar-category-list-count::before,
 .sidebar-categories .sidebar-category-list-count::after {
   content: none;
+}
+.post-body h1 .headerlink,
+.post-body h2 .headerlink,
+.post-body h3 .headerlink,
+.post-body h4 .headerlink,
+.post-body h5 .headerlink,
+.post-body h6 .headerlink {
+  border-bottom-style: none;
+  color: #088;
+  float: right;
+  margin-left: 10px;
+  visibility: hidden;
+}
+.post-body h1 .headerlink::after,
+.post-body h2 .headerlink::after,
+.post-body h3 .headerlink::after,
+.post-body h4 .headerlink::after,
+.post-body h5 .headerlink::after,
+.post-body h6 .headerlink::after {
+  content: '#';
+}
+.post-body h1 .headerlink:hover,
+.post-body h2 .headerlink:hover,
+.post-body h3 .headerlink:hover,
+.post-body h4 .headerlink:hover,
+.post-body h5 .headerlink:hover,
+.post-body h6 .headerlink:hover {
+  color: #088;
+}
+.post-body h1:hover .headerlink,
+.post-body h2:hover .headerlink,
+.post-body h3:hover .headerlink,
+.post-body h4:hover .headerlink,
+.post-body h5:hover .headerlink,
+.post-body h6:hover .headerlink {
+  visibility: visible;
 }
