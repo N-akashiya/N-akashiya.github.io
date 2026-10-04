@@ -987,7 +987,7 @@ pre .javascript .function {
 .site-title {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1.375em;
-  font-weight: normal;
+  font-weight: bold;
   margin: 0;
 }
 .site-subtitle {
@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #503d09;
+  background: #ffff2b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1256,14 +1256,14 @@ pre .javascript .function {
   margin-left: 10px;
 }
 .sidebar-nav li:hover {
-  color: #fc6423;
+  color: #088;
 }
 .sidebar-nav .sidebar-nav-active {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
+  border-bottom-color: #088;
+  color: #088;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #fc6423;
+  color: #088;
 }
 .sidebar-panel {
   display: none;
@@ -1292,7 +1292,7 @@ pre .javascript .function {
   }
 }
 .sidebar-toggle:hover .toggle-line {
-  background: #fc6423;
+  background: #088;
 }
 .post-toc {
   font-size: 0.875em;
@@ -1331,14 +1331,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
+  border-bottom-color: #088;
+  color: #088;
 }
 .post-toc .nav .active-current > a {
-  color: #fc6423;
+  color: #088;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #fc6423;
+  color: #088;
 }
 .site-state {
   display: flex;
@@ -1412,10 +1412,9 @@ pre .javascript .function {
   width: 100%;
 }
 .with-love {
-  color: #00008b;
+  color: #E2EAF4;
   display: inline-block;
   margin: 0 5px;
-  animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .powered-by,
 .theme-info {
@@ -1502,7 +1501,7 @@ pre .javascript .function {
   display: none;
 }
 .back-to-top:hover {
-  color: #fc6423;
+  color: #088;
 }
 .back-to-top.back-to-top-on {
   bottom: 30px;
@@ -1775,7 +1774,7 @@ pre .javascript .function {
 }
 .posts-expand .post-title {
   font-size: 1.5em;
-  font-weight: normal;
+  font-weight: bold;
   margin: initial;
   text-align: center;
   overflow-wrap: break-word;
@@ -2143,6 +2142,13 @@ ul.breadcrumb li + li:last-child {
 .tag-cloud a:hover {
   color: var(--link-hover-color) !important;
 }
+mjx-container[jax="CHTML"][display="true"],
+.has-jax {
+  overflow: auto hidden;
+}
+mjx-container + br {
+  display: none;
+}
 .header {
   margin: 0 auto;
   position: relative;
@@ -2319,14 +2325,14 @@ ul.breadcrumb li + li:last-child {
 .sub-menu .menu-item a:hover,
 .sub-menu .menu-item span.exturl:hover {
   background: transparent;
-  color: #fc6423;
+  color: #088;
 }
 .sub-menu .menu-item-active a {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
+  border-bottom-color: #088;
+  color: #088;
 }
 .sub-menu .menu-item-active a:hover {
-  border-bottom-color: #fc6423;
+  border-bottom-color: #088;
 }
 .sidebar {
   background: var(--body-bg-color);
@@ -2564,4 +2570,55 @@ body {
   -o-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
+}
+.sidebar-categories {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+  text-align: left;
+}
+.sidebar-categories h2 {
+  margin: 0 0 10px;
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.sidebar-categories .sidebar-category-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-categories .sidebar-category-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  padding: 5px 0;
+}
+.sidebar-categories .sidebar-category-list-link {
+  flex: 1;
+  min-width: 0;
+  border-bottom: 0;
+  color: #555;
+  font-size: 14px;
+}
+.sidebar-categories .sidebar-category-list-link:hover {
+  color: #222;
+  text-decoration: underline;
+}
+.sidebar-categories .sidebar-category-list-count {
+  min-width: 22px;
+  padding: 0 5px;
+  border-radius: 3px;
+  background: #f1f1f1;
+  color: #777;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+}
+.sidebar-categories .sidebar-category-list-count::before,
+.sidebar-categories .sidebar-category-list-count::after {
+  content: none;
 }
