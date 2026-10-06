@@ -361,12 +361,20 @@ NexT.utils = {
     if (hasTOC) {
       sidebarNav.style.display = '';
       sidebarNav.classList.add('motion-element');
-      document.querySelector('.sidebar-nav-toc').click();
+
     } else {
       sidebarNav.style.display = 'none';
       sidebarNav.classList.remove('motion-element');
-      document.querySelector('.sidebar-nav-overview').click();
+
     }
+    // Select the initial panel directly; do not animate a simulated tab click.
+    document.querySelectorAll('.sidebar-nav li').forEach(item => {
+      item.classList.toggle('sidebar-nav-active', item.classList.contains(hasTOC ? 'sidebar-nav-toc' : 'sidebar-nav-overview'));
+    });
+    document.querySelectorAll('.sidebar-panel').forEach(panel => {
+      panel.classList.toggle('sidebar-panel-active', panel.classList.contains(hasTOC ? 'post-toc-wrap' : 'site-overview-wrap'));
+      panel.style.removeProperty('opacity');
+    });
     NexT.utils.initSidebarDimension();
     if (!this.isDesktop() || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.

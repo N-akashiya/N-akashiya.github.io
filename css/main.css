@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #98b6ff;
+  background: #65ffc1;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2328,7 +2328,6 @@ mjx-container + br {
   box-sizing: border-box;
   color: var(--text-color);
   width: 240px;
-  opacity: 0;
 }
 .sidebar-inner.affix {
   position: fixed;
@@ -2896,5 +2895,57 @@ body {
 @media (min-width: 1101px) {
   .content-wrap {
     margin-top: var(--site-brand-height, 75px);
+  }
+}
+html.site-enter-pending .header-inner,
+html.site-enter-pending .content-wrap,
+html.site-enter-pending .sidebar-inner,
+html.site-enter-pending .compact-info-card {
+  opacity: 0;
+}
+html.site-enter-ready .header-inner,
+html.site-enter-ready .content-wrap,
+html.site-enter-ready .sidebar-inner,
+html.site-enter-ready .compact-info-card {
+  animation: site-card-enter 300ms ease backwards;
+}
+@-moz-keyframes site-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@-webkit-keyframes site-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@-o-keyframes site-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes site-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
