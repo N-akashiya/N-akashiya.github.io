@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0954ff;
+  background: #cfc3c7;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2909,6 +2909,43 @@ html.site-enter-ready .sidebar-inner,
 html.site-enter-ready .compact-info-card {
   animation: site-card-enter 300ms ease backwards;
 }
+.blog-background {
+  display: none;
+}
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+  html.blog-background-moving body {
+    isolation: isolate;
+    background-image: none;
+  }
+  html.blog-background-moving .blog-background {
+    display: block;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+    background: #000;
+  }
+  html.blog-background-moving .blog-background .blog-background-track {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--blog-background-offset);
+    display: flex;
+    width: max-content;
+    animation: blog-background-drift var(--blog-background-duration) linear infinite;
+  }
+  html.blog-background-moving .blog-background .blog-background-tile {
+    flex: 0 0 var(--blog-background-width);
+    width: var(--blog-background-width);
+    height: 100%;
+    background: #000 url("/images/bgp.png") left center no-repeat;
+    background-size: var(--blog-background-image-width) auto;
+  }
+  html.blog-background-paused .blog-background-track {
+    animation-play-state: paused;
+  }
+}
 @-moz-keyframes site-card-enter {
   from {
     opacity: 0;
@@ -2947,5 +2984,37 @@ html.site-enter-ready .compact-info-card {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+@-moz-keyframes blog-background-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(0px - var(--blog-background-width)), 0, 0);
+  }
+}
+@-webkit-keyframes blog-background-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(0px - var(--blog-background-width)), 0, 0);
+  }
+}
+@-o-keyframes blog-background-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(0px - var(--blog-background-width)), 0, 0);
+  }
+}
+@keyframes blog-background-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(0px - var(--blog-background-width)), 0, 0);
   }
 }
